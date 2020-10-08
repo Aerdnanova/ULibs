@@ -75,6 +75,7 @@ div.description{
     background-color: #f0f0f5;
     padding: 20px;
     border-top: 1px solid white;
+    border-radius: 5px;
 }
 .side .login .subtitle {
     text-align: center;
