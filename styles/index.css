@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box;
+}
+body {
+
+    font-family: Arial;
+    margin: 0;
+}
+/*Header Information*/
+.titleBox {
+    padding: 80px;
+    color: white;
+    background: #A52A2A;
+    text-align: center;
+}
+.titleBox #header {
+    font-size: 50px;
+}
+/*Navbar information*/
+.navBox {
+    overflow: hidden;
+    background-color: #800000;
+}
+.navBox a {
+    display: block;
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+/*Floating to the right*/
+.navBox a.right {
+    float: right;
+}
+.navBox a:hover {
+    color: black;
+    background-color: #992600;
+}
+/*Photo gallery stuff*/
+.photoGal {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin: 10px;
+    border: 10px dotted #f0f0f5;
+}
+div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+div.gallery:hover {
+    border: 1px solid #777;
+}
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+div.description{
+    padding: 15px;
+    text-align: center;
+    background-color: white;
+}
+
+/*Main content information*/
+.mainContent {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px
+}
+.side {
+    flex: 20%;
+    background-color: #f0f0f5;
+    padding: 20px;
+    border-top: 1px solid white;
+}
+.side .login .subtitle {
+    text-align: center;
+    margin: 0;
+    padding-bottom: 20px;
+    font-size: 30px;
+}
+/*Login information*/
+.side .login {
+    border-radius: 5px;
+    padding: 20px;
+}
+.side .login input[type=text] {
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+}
+.side .login input[type=submit] {
+    width: 100%;
+    padding: 14px 20px;
+    margin: 8px  0;
+    background-color: #d8d8e5;
+    color: black;
+    border: none;
+    border-radius: 4px;
+}
+.side .login input[type=submit]:hover {
+    background-color: #eaeaea;
+    color: black;
+}
+.subtitle {
+    text-align: center;
+}
+.main {
+    flex: 80%;
+    background-color: white;
+    padding: 20px;
+}
+/*Contact Us Information*/
+.emailContentBox {
+
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #f0f0f5;
+
+}
+.emailContentBox .emailBox {
+    
+}
+.contactUs .emailContentBox input[type=text] {
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+}
+.contactUs .emailContentBox input[type=submit] {
+    width: 100%;
+    padding: 14px 20px;
+    margin: 8px  0;
+    background-color: #d8d8e5;
+    color: black;
+    border: none;
+    border-radius: 4px;
+}
+.side .login input[type=submit]:hover {
+    background-color: #eaeaea;
+    color: black;
+}
