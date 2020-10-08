@@ -43,7 +43,7 @@ body {
     justify-content: center;
     padding: 20px;
     margin: 10px;
-    border: 10px dotted #f0f0f5;
+    border: 10px dashed #f0f0f5;
 }
 div.gallery {
     margin: 5px;
