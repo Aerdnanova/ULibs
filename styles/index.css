@@ -45,20 +45,20 @@ body {
     margin: 10px;
     border: 10px dashed #f0f0f5;
 }
-div.gallery {
+div .gallery {
     margin: 5px;
     border: 1px solid #ccc;
     float: left;
     width: 180px;
 }
-div.gallery:hover {
+div .gallery:hover {
     border: 1px solid #777;
 }
-div.gallery img {
+div .gallery img {
     width: 100%;
     height: auto;
 }
-div.description{
+div .description{
     padding: 15px;
     text-align: center;
     background-color: white;
@@ -71,7 +71,7 @@ div.description{
     padding: 10px
 }
 .side {
-    flex: 20%;
+    flex: 30%;
     background-color: #f0f0f5;
     padding: 20px;
     border-top: 1px solid white;
@@ -114,7 +114,7 @@ div.description{
     text-align: center;
 }
 .main {
-    flex: 80%;
+    flex: 70%;
     background-color: white;
     padding: 20px;
 }
@@ -156,6 +156,59 @@ div.description{
     border-radius: 4px;
 }
 .side .login input[type=submit]:hover {
+    background-color: #eaeaea;
+    color: black;
+}
+/*sign up professor*/
+
+/*sign up student*/
+.popUpContent {
+    width: 60%;
+    border: 1px solid black;
+    background-color: #fefefe;
+    margin: 5% auto 15% auto;
+}
+.popUp {
+    display: none; /*Starts of as none*/
+    position: fixed;
+    overflow: auto;
+    background-color: #A52A2A;
+    width: 100%;
+    height: 100%;
+    padding-top: 40px;
+    z-index: 1;
+    left: 0;
+    top: 0; 
+}
+.signContainer {
+    padding: 16px;
+}
+.popUp .popUpContent input[type=text], .popUp .popUpContent input[type=password] {
+    display: inline-block;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    margin: 5px 0 15px 0;
+    background: #f1f1f1;
+} 
+.popUp .popUpContent input[type=submit], .popUp .popUpContent input[type=button] {
+    width: 100%;
+    padding: 14px 20px;
+    margin: 8px  0;
+    background-color: #d8d8e5;
+    color: black;
+    border: none;
+    border-radius: 4px;
+}
+.popUp .popUpContent input[type=button] {
+    background-color: #A52A2A;
+    color: white;
+}
+.popUp .popUpContent input[type=button]:hover {
+    background-color: #992600;
+    color: black;
+}
+.popUp .popUpContent input[type=submit]:hover {
     background-color: #eaeaea;
     color: black;
 }

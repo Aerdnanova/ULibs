@@ -12,13 +12,14 @@
             <h2 id="subtitle">Online Textbook Library System</h2>
         </div>
         <div class="navBox">
-            <a href="#">Product Information</a>
-            <a href="#">About Us</a>
-            <a href="#">Contact Us</a>
-            <a href="#" class="right">Sign Up</a>
+            <a href="#product">Product Information</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact Us</a>
+            <a href="#" class="right" onclick="document.getElementById('signingUpStudent').style.display='block'">Student Sign Up</a>
+            <a href="#" class="right" onclick="document.getElementById('signingUpProfessor').style.display='block'">Professor Sign Up</a>
         </div>
         
-
+        <!--TODO: ADD PHOTOS FOR PHOTO GALLERY-->
         <div class="photoGal">                 
             <div class="gallery">
                 <a target="_blank" href="photos/fillerPhoto.jpg">
@@ -66,7 +67,19 @@
         <div class="mainContent">
             <div class="side">
                 <div class="login">
-                    <h2 class="subtitle">Login Here!</h2>
+                    <h2 class="subtitle">Students Login Here!</h2>
+                    
+                    <form action="">
+                        <label for="stdemail">Email Address: </label>
+                        <input type="text" id="stdemail" name="stdemail" placeholder="example@email.ca"></input>
+                        <label for="stdpassword">Password: </label>
+                        <input type="text" id="stdpassword" name="stdpassword" placeholder="password"></input>
+                        <input type="submit" value="Login">
+                    </form> 
+                </div>
+                <hr>
+                <div class="login">
+                    <h2 class="subtitle">Professors Login Here!</h2>
                     
                     <form action="">
                         <label for="email">Email Address: </label>
@@ -77,20 +90,21 @@
                     </form>
                 
                 </div>
+
             </div>
             
             <div class="main">
-                <div class="productInfo">
+                <div class="productInfo" id="product">
                     <h2 class="subtitle">Product Information</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quae sunt igitur communia vobis cum antiquis, iis sic utamur quasi concessis; Nihil acciderat ei, quod nollet, nisi quod anulum, quo delectabatur, in mari abiecerat. Unum est sine dolore esse, alterum cum voluptate. Laboro autem non sine causa; Theophrasti igitur, inquit, tibi liber ille placet de beata vita? Nihil opus est exemplis hoc facere longius. Duo Reges constructio interrete. Graecum enim hunc versum nostis omnes Suavis laborum est praeteritorum memoria. Haec et tu ita posuisti, et verba vestra sunt.</p>
                 </div>
 
-                <div class="aboutUs">
+                <div class="aboutUs" id="about">
                     <h2 class="subtitle">About Us</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quae sunt igitur communia vobis cum antiquis, iis sic utamur quasi concessis; Nihil acciderat ei, quod nollet, nisi quod anulum, quo delectabatur, in mari abiecerat. Unum est sine dolore esse, alterum cum voluptate. Laboro autem non sine causa; Theophrasti igitur, inquit, tibi liber ille placet de beata vita? Nihil opus est exemplis hoc facere longius. Duo Reges constructio interrete. Graecum enim hunc versum nostis omnes Suavis laborum est praeteritorum memoria. Haec et tu ita posuisti, et verba vestra sunt.</p>
                 </div>
 
-                <div class="contactUs">
+                <div class="contactUs" id="contact">
                     <h2 class="subtitle">Contact Us</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quae sunt igitur communia vobis cum antiquis, iis sic utamur quasi concessis; Nihil acciderat ei, quod nollet, nisi quod anulum, quo delectabatur, in mari abiecerat. Unum est sine dolore esse, alterum cum voluptate. Laboro autem non sine causa; Theophrasti igitur, inquit, tibi liber ille placet de beata vita? Nihil opus est exemplis hoc facere longius. Duo Reges constructio interrete. Graecum enim hunc versum nostis omnes Suavis laborum est praeteritorum memoria. Haec et tu ita posuisti, et verba vestra sunt.</p>
                     <form class="emailContentBox" action="">
@@ -107,5 +121,74 @@
                 </div>
             </div>
         </div>
+
+        <div id="signingUpStudent" class="popUp">
+            <form class="popUpContent" action="">
+                <div class="signContainer">
+                    <h1> Student Sign Up!</h1>
+                    <label for="emailS">Email Address: </label> 
+                    <input type="text" id="emailS" name="emailS" placeholder="example@gmail.ca"></input>
+                    <label for="PasswordS">Password: </label> 
+                    <input type="text" id="PasswordS" name="PasswordS" placeholder="password"></input>
+                    <label for="stid">Student ID: </label> 
+                    <input type="text" id="stid" name="stid" placeholder="123456789"></input>
+                    
+                    <label for="fname">First Name </label> 
+                    <input type="text" id="fname" name="fname" placeholder="John"></input>
+
+                    <label for="lname">Last Name: </label> 
+                    <input type="text" id="lname" name="lname" placeholder="Doe"></input>
+
+                    <label for="smajor">Major: </label> 
+                    <input type="text" id="smajor" name="smajor" placeholder="Computer Science"></input>
+                    
+                    <input type="submit" value="Sign Up">
+                    <input type="button" value="Exit" onclick="document.getElementById('signingUpStudent').style.display = 'none'">
+                
+                </div>
+            </form>
+        </div>
+
+        <div id="signingUpProfessor" class="popUp">
+            <form class="popUpContent" action="">
+                <div class="signContainer">
+                    <h1>Professor Sign Up!</h1>
+                    <!--Only other admins can assign admins. So they can't enter isAdmin-->
+                    <label for="emailS">Email Address: </label> 
+                    <input type="text" id="emailS" name="emailS" placeholder="example@gmail.ca"></input>
+                    <label for="PasswordS">Password: </label> 
+                    <input type="text" id="PasswordS" name="PasswordS" placeholder="password"></input>
+                    <label for="stid">Professor ID: </label> 
+                    <input type="text" id="stid" name="stid" placeholder="123456789"></input>
+                    
+                    <label for="fname">First Name </label> 
+                    <input type="text" id="fname" name="fname" placeholder="John"></input>
+
+                    <label for="lname">Last Name: </label> 
+                    <input type="text" id="lname" name="lname" placeholder="Doe"></input>
+
+                    <label for="smajor">Major: </label> 
+                    <input type="text" id="smajor" name="smajor" placeholder="Computer Science"></input>
+                    
+                    <input type="submit" value="Sign Up">
+                    <input type="button" value="Exit" onclick="document.getElementById('signingUpProfessor').style.display = 'none'">
+                
+                </div>
+            </form>
+        </div>
+
+
+        <script>
+            var popUp1 = document.getElementById('signingUpStudent');
+            var popUp2 = document.getElementById('signingUpProfessor');
+            window.onclick = function(event) {
+                if (event.target == popUp1) {
+                    popUp1.style.display = "none";
+                }
+                if (event.target == popUp2) {
+                    popUp2.style.display = "none";
+                }
+            }
+        </script>
     </body>
 </html>
