@@ -10,19 +10,224 @@
         <div class="titleBox">
             <h1 id="header">ULibs - Online Textbook Library System</h1>
         </div>
-        <div class="navBox">
-            <a href="#">My Libraries</a>
-            <a href="#">Search For Books</a>
-            <a href="#" class="right">Profile</a>
+
+        <div id="navBox">
+            <a href="#" onclick="document.getElementById('addLibrary').style.display = 'block'">Add A Library</a>
+            <a href="#" onclick="document.getElementById('searchBook').style.display = 'block'">Search For Books</a>
+            <a href="#" onclick="document.getElementById('addBook').style.display = 'block'">Add Book To Library</a>
+            <a href="#" class="right"  onclick="document.getElementById('editProfile').style.display = 'block'">Edit Profile</a>
+            <a href="#libraryList">My Libraries</a>
+            <a href="#booksInLibraries">My Books by Library</a>
+            <a href="#addedBooks">My Books</a>
+            <a href="#borrowedBooks">Borrowed Books</a>
         </div>
             
         <!--Pages that will be switched between making hidden and not hidden-->
 
         <div class="mainContent">
-            <div class="">
+            <div class="profileInformation">
+                <h2 class="welcome">Welcome back {ENTER NAME OF PROF HERE}!</h2>
+                <h3 class="welcome">You have # make books being borrowed from # of student(s)! The following is your updated information!</h3>
+            </div>
+            
+            <div id="libraryList">
+                <!--Loaded for the libraries that this specific professor owns-->
+                <h2 class="subtitle">My Libraries</h2>
+                <table id="libraries">
+                    <tr>
+                        <th>Library ID</th>
+                        <th>Location</th>
+                        <th>Address</th>
+                    </tr>
+                    <tr>    
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                </table>
+            </div> 
+            <br>
+            <!--For every library that is owned, print out the books-->
+            <div id="booksInLibraries"> 
+                <h2 class="subtitle">Books by Libraries</h2> 
+                <table id="libraries">
+                    <tr>
+                        <th>Library ID</th>
+                        <th>Book List</th> <!--List all available by title-->
+                        <th>Number Available</th>
+                    </tr>
+                    <tr>    
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                </table> 
+            </div>
+            <br>
+            <div id="addedBooks">
+                <h2 class="subtitle">My Books</h2>
+                <table id="libraries">
+                    <tr>
+                        <th>Book ID</th>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>    
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                </table>
+            </div>
+            <br>
+            <div id="borrowedBooks">
+                <h2 class="subtitle">Borrowed Books</h2>
+                <table id="libraries">
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Student ID</th>
+                        <th>Student Email</th>
+                        <th>Book ID</th>
+                        <th>Book Title</th>
+                        <th>Borrow Date</th>
+                        <th>Due Date</th>   <!--Due date is a month after the borrow-->
+                    </tr>
+                    <tr>    
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                </table>
+
             </div>
 
         </div>
+        
+        <!--Set up to check for everything. Book name, course, library name, prof, etc-->
+        <div id="searchBook" class="popUp">
+            <form class="popUpContent" action="">
+                <div class="signContainer">
+                    <h1>Search</h1>
+                    <label for="search">Search: </label> 
+                    <input type="text" id="search" name="search" placeholder="Search"></input>
+                    
+                    <input type="button" value="Exit" onclick="document.getElementById('searchBook').style.display = 'none'">
+                
+                </div>
+            </form>
+        </div>
 
+        
+        <div id="editProfile" class="popUp">
+            <form class="popUpContent" action="">
+                <div class="signContainer">
+                    <h1> Edit Profile!</h1>
+                    <label for="fname">First Name: </label> 
+                    <input type="text" id="fname" name="fname" placeholder="John"></input>
+                    <label for="lname">Last Name: </label> 
+                    <input type="text" id="lname" name="lname" placeholder="Doe"></input>
+                    
+                    <label for="email">Email: </label> 
+                    <input type="text" id="email" name="email" placeholder="example@email.com"></input>
+                    
+                    <label for="password">Password: </label> 
+                    <input type="text" id="password" name="password" placeholder="password"></input>
+
+                    <label for="major">Major: </label> 
+                    <input type="text" id="major" name="major" placeholder="Program of Study"></input>
+                    <input type="submit" value="Save Profile">
+                    <input type="button" value="Exit" onclick="document.getElementById('editProfile').style.display = 'none'">
+                
+                </div>
+            </form>
+        </div>
+        
+        <div id="addLibrary" class="popUp">
+            <form class="popUpContent" action="">
+                <div class="signContainer">
+                    <h1>Library Information</h1>
+                    <label for="lid">Library ID: </label> 
+                    <input type="text" id="lid" name="lid" placeholder="Lib-###"></input>
+                    
+                    <label for="location">Location: </label> 
+                    <input type="text" id="location" name="location" placeholder="Building Name"></input>
+                    
+                    <label for="address">Address: </label> 
+                    <input type="text" id="address" name="address" placeholder="1234 Apple Lane"></input>
+                    
+                    <!--Belongs to library will be populated with id of professor-->
+                    <input type="submit" value="Add Library">
+                    <input type="button" value="Exit" onclick="document.getElementById('addLibrary').style.display = 'none'">
+                
+                </div>
+            </form>
+        </div>
+        
+        <div id="addBook" class="popUp">
+            <form class="popUpContent" action="">
+                <div class="signContainer">
+                    <h1>Book Information</h1>
+                    <label for="isbn">ISBN: </label> 
+                    <input type="text" id="isbn" name="isbn" placeholder="#########"></input>
+                    
+                    <label for="aname">Author Name: </label> 
+                    <input type="text" id="aname" name="aname" placeholder="Cassy Clare"></input>
+                    
+                    <label for="title">Title: </label> 
+                    <input type="text" id="title" name="title" placeholder="The Book Title"></input>
+                    <label for="desc">Description: </label> 
+                    <input type="text" id="desc" name="desc" placeholder="This book is about ..."></input>
+                    <label for="course">Courses Available: </label>
+                    <select id="course" name="course">
+                        <option value="0">N/A</option>
+                    </select>
+                    
+                    <!--Add is optional thingy-->
+
+                    <input type="submit" value="Add Book">
+                    <input type="button" value="Exit" onclick="document.getElementById('addBook').style.display = 'none'">
+                
+                </div>
+            </form>
+        </div>
+
+
+      <script>
+            var popUp1 = document.getElementById('addLibrary');
+            var popUp2 = document.getElementById('editProfile');
+            var popUp3 = document.getElementById('addBook');
+            var popUp4 = document.getElementById('searchBook');
+            var navbar = document.getElementById('navBox');
+            var sticky = navbar.offsetTop;
+            window.onclick = function(event) {
+                if (event.target == popUp2) {
+                    popUp2.style.display = "none";
+                }
+                if (event.target == popUp1) {
+                    popUp1.style.display = "none";
+                }
+                if (event.target == popUp3) {
+                    popUp3.style.display = "none";
+                }
+                if (event.target == popUp4) {
+                    popUp4.style.display = "none";
+                }
+            }
+           
+            window.onscroll = function() {
+                if (window.pageYOffset >= sticky) {
+                    navbar.classList.add("sticky")
+                } else {
+                    navbar.classList.remove("sticky");
+                }
+            }
+
+      </script>
     </body>
 </html>

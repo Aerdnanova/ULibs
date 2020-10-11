@@ -17,11 +17,11 @@ body {
     font-size: 50px;
 }
 /*Navbar information*/
-.navBox {
+#navBox {
     overflow: hidden;
     background-color: #800000;
 }
-.navBox a {
+#navBox a {
     display: block;
     float: left;
     color: white;
@@ -30,12 +30,17 @@ body {
     text-decoration: none;
 }
 /*Floating to the right*/
-.navBox a.right {
+#navBox a.right {
     float: right;
 }
-.navBox a:hover {
+#navBox a:hover {
     color: black;
     background-color: #992600;
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 /*Photo gallery stuff*/
 .photoGal {

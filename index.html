@@ -11,7 +11,7 @@
             <h1 id="header">ULibs</h1>
             <h2 id="subtitle">Online Textbook Library System</h2>
         </div>
-        <div class="navBox">
+        <div id="navBox">
             <a href="#product">Product Information</a>
             <a href="#about">About Us</a>
             <a href="#contact">Contact Us</a>
@@ -180,7 +180,9 @@
 
         <script>
             var popUp1 = document.getElementById('signingUpStudent');
-            var popUp2 = document.getElementById('signingUpProfessor');
+            var navbar = document.getElementById('navBox');
+            var sticky = navbar.offsetTop;
+             var popUp2 = document.getElementById('signingUpProfessor');
             window.onclick = function(event) {
                 if (event.target == popUp1) {
                     popUp1.style.display = "none";
@@ -189,6 +191,17 @@
                     popUp2.style.display = "none";
                 }
             }
+
+          
+            window.onscroll = function() {
+                if (window.pageYOffset >= sticky) {
+                    navbar.classList.add("sticky")
+                } else {
+                    navbar.classList.remove("sticky");
+                }
+            }
+
+ 
         </script>
     </body>
 </html>
