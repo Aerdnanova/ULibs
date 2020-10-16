@@ -1,17 +1,16 @@
-
-<!doctype html>
+<!doctype htmevascript:void(0)">
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <title>ULib - Online Textbook Library System</title>
-        <link rel="stylesheet" href="styles/profAccount.css">
+        <link rel="stylesheet" href="styles/adminProfAccount.css">
     </head>
     <body>
         
         <div class="titleBox">
             <h1 id="header">ULibs - Online Textbook Library System</h1>
         </div>
-
+        
         <div id="navBox">
             <div class="dropdown" >
                 <button href="javascript:void(0)" class="dropbtn">Library Information</button>
@@ -21,11 +20,30 @@
                     <a href="#" onclick="document.getElementById('removeLibrary').style.display = 'block'">Remove Library</a>
                 </div>
             </div>
+            
+            <div class="dropdown"> 
+                <button href="javascript:void(0)" class="dropbtn">Course Information</button>
+                <div class="dropdown_content" id="dropdown">
+                    
+                    <a href="#" onclick="document.getElementById('removeCourse').style.display = 'block'">Remove Course</a>
+                    <a href="#" onclick="document.getElementById('addCourse').style.display = 'block'">Add Course</a>
+                </div>
+            </div>
+            
+            <div class="dropdown"> 
+                <button href="javascript:void(0)" class="dropbtn">Role Management</button>
+                <div class="dropdown_content" id="dropdown">
+                    
+                    <a href="#" onclick="document.getElementById('removeAdmin').style.display = 'block'">Remove Admin</a>
+                    <a href="#" onclick="document.getElementById('addAdmin').style.display = 'block'">Add Admin</a>
+                </div>
+            </div>
 
             <div class="dropdown"> 
                 <button href="javascript:void(0)" class="dropbtn">Book Information</button>
                 <div class="dropdown_content" id="dropdown">
                     <a href="#borrowedBooks">Borrowed Books</a>         
+                    <a href="#lateBooks">Late Books</a>
                     <a href="#addedBooks">My Books</a>
                     <a href="#booksInLibraries">My Books by Library</a>
                     
@@ -37,7 +55,7 @@
             <a href="#" class="right" onclick="document.getElementById('searchBook').style.display = 'block'">Search</a>
             <a href="#" class="right"  onclick="document.getElementById('editProfile').style.display = 'block'">Edit Profile</a>
         </div>
-            
+ 
         <!--Pages that will be switched between making hidden and not hidden-->
 
         <div class="mainContent">
@@ -98,8 +116,8 @@
                 </table>
             </div>
             <br>
-            <div id="borrowedBooks">
-                <h2 class="subtitle">Borrowed Books</h2>
+             <div id="borrowedBooks">
+                <h2 class="subtitle">Total Borrowed Books</h2>
                 <table id="libraries">
                     <tr>
                         <th>Student Name</th>
@@ -122,24 +140,32 @@
                 </table>
 
             </div>
-
+            <br>
+              <div id="lateBooks">
+                <h2 class="subtitle">Late Books</h2>
+                <table id="libraries">
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Student ID</th>
+                        <th>Student Email</th>
+                        <th>Book ID</th>
+                        <th>Book Title</th>
+                        <th>Borrow Date</th>
+                        <th>Due Date</th>   <!--Due date is a month after the borrow-->
+                    </tr>
+                    <tr>    
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                </table>
+            </div>
         </div>
-        
-        <!--Set up to check for everything. Book name, course, library name, prof, etc-->
-        <div id="searchBook" class="popUp">
-            <form class="popUpContent" action="">
-                <div class="signContainer">
-                    <h1>Search</h1>
-                    <label for="search">Search: </label> 
-                    <input type="text" id="search" name="search" placeholder="Search"></input>
-                   
 
-                    <input type="submit" value="Search">
-                    <input type="button" value="Exit" onclick="document.getElementById('searchBook').style.display = 'none'">
-                
-                </div>
-            </form>
-        </div>
         <div id="removeBook" class="popUp">
             <form class="popUpContent" action="">
                 <div class="signContainer">
@@ -152,12 +178,43 @@
                 
                 </div>
             </form>
-        </div><div id="removeLibrary" class="popUp">
+        </div>
+      
+        <div id="addAdmin" class="popUp">
+            <form class="popUpContent" action="">
+                <div class="signContainer">
+                    <h1>Professor Information</h1>
+                    <label for="aprof_id">Professor ID: </label> 
+                    <input type="text" id="aprof_id" name="aprof_id" placeholder="prof id"></input>
+                    
+                    <input type="submit" value="Set To Admin">
+                    <input type="button" value="Exit" onclick="document.getElementById('addAdmin').style.display = 'none'">
+                
+                </div>
+            </form>
+        </div>
+
+        <div id="removeAdmin" class="popUp">
             <form class="popUpContent" action="">
                 <div class="signContainer">
                     <h1>Remove Library</h1>
-                    <label for="lib_id">Library_ID: </label> 
-                    <input type="text" id="lib_id" name="lib_id" placeholder="lib_id"></input>
+                    <label for="rprof_id">Professor ID: </label> 
+                    <input type="text" id="rprof_id" name="rprof_id" placeholder="prof id"></input>
+                    
+                    <input type="submit" value="Remove Admin Privileges">
+                    <input type="button" value="Exit" onclick="document.getElementById('removeAdmin').style.display = 'none'">
+                
+                </div>
+            </form>
+        </div>
+
+
+        <div id="removeLibrary" class="popUp">
+            <form class="popUpContent" action="">
+                <div class="signContainer">
+                    <h1>Remove Library</h1>
+                    <label for="lib_id">Library ID: </label> 
+                    <input type="text" id="lib_id" name="lib_id" placeholder="lib id"></input>
                     
                     <input type="submit" value="Remove Library">
                     <input type="button" value="Exit" onclick="document.getElementById('removeLibrary').style.display = 'none'">
@@ -165,6 +222,35 @@
                 </div>
             </form>
         </div>
+
+
+        <div id="removeCourse" class="popUp">
+            <form class="popUpContent" action="">
+                <div class="signContainer">
+                    <h1>Remove Course</h1>
+                    <label for="cid">Course Code: </label> 
+                    <input type="text" id="cid" name="cid" placeholder="Course Code"></input>
+                    
+                    <input type="submit" value="Remove Book">
+                    <input type="button" value="Exit" onclick="document.getElementById('removeBook').style.display = 'none'">
+                
+                </div>
+            </form>
+        </div>
+        <!--Set up to check for everything. Book name, course, library name, prof, etc-->
+        <div id="searchBook" class="popUp">
+            <form class="popUpContent" action="">
+                <div class="signContainer">
+                    <h1>Search</h1>
+                    <label for="search">Search: </label> 
+                    <input type="text" id="search" name="search" placeholder="Search"></input>
+                    
+                    <input type="button" value="Exit" onclick="document.getElementById('searchBook').style.display = 'none'">
+                
+                </div>
+            </form>
+        </div>
+
         
         <div id="editProfile" class="popUp">
             <form class="popUpContent" action="">
@@ -211,6 +297,23 @@
             </form>
         </div>
         
+        <div id="addCourse" class="popUp">
+            <form class="popUpContent" action="">
+                <div class="signContainer">
+                    <h1>Course Information: </h1>
+                    <label for="course_id">Course_ID: </label> 
+                    <input type="text" id="course_id" name="course_id" placeholder="#########"></input>     
+                    <label for="cname">Course Name: </label> 
+                    <input type="text" id="cname" name="cname" placeholder="The Book Title"></input>
+                    <label for="cmajor">Major: </label> 
+                    <input type="text" id="cmajor" name="cmajor" placeholder="This book is about ..."></input>                    
+                    <input type="submit" value="Add Book">
+                    <input type="button" value="Exit" onclick="document.getElementById('addCourse').style.display = 'none'">
+                
+                </div>
+            </form>
+        </div>
+
         <div id="addBook" class="popUp">
             <form class="popUpContent" action="">
                 <div class="signContainer">
@@ -245,10 +348,13 @@
             var popUp2 = document.getElementById('editProfile');
             var popUp3 = document.getElementById('addBook');
             var popUp4 = document.getElementById('searchBook');
-            var popUp5 = document.getElementById('removeBook');
-            var popUp6 = document.getElementById('removeLibrary');
             var navbar = document.getElementById('navBox');
-            var dropdown = document.getElementById('dropdown');
+            var popUp6 = document.getElementById('removeCourse');
+            var popUp7 = document.getElementById('removeBook');
+            var popUp8 = document.getElementById('removeLibrary');
+            var popUp5 = document.getElementById('addCourse');
+            var popUp9 = document.getElementById('addAdmin');
+            var popUp10 = document.getElementById('removeAdmin');
             var sticky = navbar.offsetTop;
             window.onclick = function(event) {
                 if (event.target == popUp2) {
@@ -268,6 +374,18 @@
                 }
                 if (event.target == popUp6) {
                     popUp6.style.display = "none";
+                }
+                if (event.target == popUp7) {
+                    popUp7.style.display = "none";
+                }
+                if (event.target == popUp8) {
+                    popUp8.style.display = "none";
+                }
+                if (event.target == popUp9) {
+                    popUp9.style.display = "none";
+                }
+                if (event.target == popUp10) {
+                    popUp10.style.display = "none";
                 }
             }
            
