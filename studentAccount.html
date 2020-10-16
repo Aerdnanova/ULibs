@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>ULib - Online Textbook Library System</title>
+        <link rel="stylesheet" href="styles/studentAccount.css">
+    </head>
+    <body>
+        
+        <div class="titleBox">
+            <h1 id="header">ULibs - Online Textbook Library System</h1>
+        </div>
+
+        <div id="navBox"> 
+            <div class="dropdown"> 
+                <button href="javascript:void(0)" class="dropbtn">Book Information</button>
+                <div class="dropdown_content" id="dropdown">
+                    <a href="#booksBorrowed">Borrowed Books</a>          
+                    <a href="#" onclick="document.getElementById('borrowBook').style.display = 'block'">Borrow Book</a>
+                    <a href="#" onclick="document.getElementById('returnBook').style.display = 'block'">Return Book</a>
+                </div>
+            </div>
+
+            <a href="#" class="right" onclick="document.getElementById('searchBook').style.display = 'block'">Search</a>
+            <a href="#" class="right"  onclick="document.getElementById('editProfile').style.display = 'block'">Edit Profile</a>
+        </div>
+            
+        <!--Pages that will be switched between making hidden and not hidden-->
+
+        <div class="mainContent">
+            <div class="profileInformation">
+                <h2 class="welcome">Welcome back {ENTER NAME OF STUDENT HERE}!</h2>
+            </div>
+            
+            <div id="booksBorrowed">
+                <!--Loaded for the libraries that this specific professor owns-->
+                <h2 class="subtitle">My Borrowed Books</h2>
+                <table id="libraries">
+                    <tr>
+                        <th>ISBN</th>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Description</th>
+                        <th>Due Date</th>
+                    </tr>
+                    <tr>        
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                </table>
+            </div> 
+            <br>
+            <div id="lateBooks">
+                <!--Loaded for the libraries that this specific professor owns-->
+                <h2 class="subtitle">Late Books</h2>
+                <table id="libraries">
+                    <tr>
+                        <th>ISBN</th>
+                        <th>Due Date</th>
+                        <th>Borrow Date</th>
+                    </tr>
+                    <tr>        
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                </table>
+            </div> 
+            <br>
+
+        </div>
+        
+        <!--Set up to check for everything. Book name, course, library name, prof, etc-->
+        <div id="searchBook" class="popUp">
+            <form class="popUpContent" action="">
+                <div class="signContainer">
+                    <h1>Search</h1>
+                    <label for="search">Search: </label> 
+                    <input type="text" id="search" name="search" placeholder="Search"></input>
+                   
+
+                    <input type="submit" value="Search">
+                    <input type="button" value="Exit" onclick="document.getElementById('searchBook').style.display = 'none'">
+                
+                </div>
+            </form>
+        </div>
+
+        <div id="borrowBook" class="popUp">
+            <form class="popUpContent" action="">
+                <div class="signContainer">
+                    <h1>Search</h1>
+                    <label for="bookID">ISBN </label> 
+                    <input type="text" id="bookID" name="bookID" placeholder="#########"></input>
+                   
+
+                    <input type="submit" value="Borrow Book">
+                    <input type="button" value="Exit" onclick="document.getElementById('borrowBook').style.display = 'none'">
+                
+                </div>
+            </form>
+        </div>
+
+         <div id="returnBook" class="popUp">
+            <form class="popUpContent" action="">
+                <div class="signContainer">
+                    <h1>Search</h1>
+                    <label for="rbookID">ISBN </label> 
+                    <input type="text" id="rbookID" name="rbookID" placeholder="#########"></input>
+                   
+
+                    <input type="submit" value="Return Book">
+                    <input type="button" value="Exit" onclick="document.getElementById('returnBook').style.display = 'none'">
+                
+                </div>
+            </form>
+        </div>
+
+
+        <div id="editProfile" class="popUp">
+            <form class="popUpContent" action="">
+                <div class="signContainer">
+                    <h1> Edit Profile!</h1>
+                    <label for="fname">First Name: </label> 
+                    <input type="text" id="fname" name="fname" placeholder="John"></input>
+                    <label for="lname">Last Name: </label> 
+                    <input type="text" id="lname" name="lname" placeholder="Doe"></input>
+                    
+                    <label for="email">Email: </label> 
+                    <input type="text" id="email" name="email" placeholder="example@email.com"></input>
+                    
+                    <label for="password">Password: </label> 
+                    <input type="text" id="password" name="password" placeholder="password"></input>
+
+                    <label for="major">Major: </label> 
+                    <input type="text" id="major" name="major" placeholder="Program of Study"></input>
+                    <input type="submit" value="Save Profile">
+                    <input type="button" value="Exit" onclick="document.getElementById('editProfile').style.display = 'none'">
+                
+                </div>
+            </form>
+        </div>
+        
+       
+      <script>
+            var popUp1 = document.getElementById('searchBook');
+            var popUp2 = document.getElementById('editProfile');
+            var popUp3 = document.getElementById('borrowBook');
+            var popUp4 = document.getElementById('returnBook');
+            var navbar = document.getElementById('navBox');
+            var dropdown = document.getElementById('dropdown');
+            var sticky = navbar.offsetTop;
+            window.onclick = function(event) {
+                if (event.target == popUp2) {
+                    popUp2.style.display = "none";
+                }
+                if (event.target == popUp1) {
+                    popUp1.style.display = "none";
+                }
+                if (event.target == popUp3) {
+                    popUp3.style.display = "none";
+                } 
+                if (event.target == popUp4) {
+                    popUp4.style.display = "none";
+                } 
+            }
+           
+            window.onscroll = function() {
+                if (window.pageYOffset >= sticky) {
+                    navbar.classList.add("sticky")
+                } else {
+                    navbar.classList.remove("sticky");
+                }
+            }
+
+      </script>
+    </body>
+</html>
