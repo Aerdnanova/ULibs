@@ -285,8 +285,8 @@
                     <label for="cid">Course Code: </label> 
                     <input type="text" id="cid" name="cid" placeholder="Course Code"></input>
                     
-                    <input type="submit" value="Remove Book">
-                    <input type="button" value="Exit" onclick="document.getElementById('removeBook').style.display = 'none'">
+                    <input type="submit" value="Remove Course">
+                    <input type="button" value="Exit" onclick="document.getElementById('removeCourse').style.display = 'none'">
                 
                 </div>
             </form>
@@ -361,7 +361,13 @@
                     <input type="text" id="cname" name="cname" placeholder="The Book Title"></input>
                     <label for="cmajor">Major: </label> 
                     <input type="text" id="cmajor" name="cmajor" placeholder="This book is about ..."></input>                    
-                    <input type="submit" value="Add Book">
+                   
+                    <label for="prof">Professors Available: </label>
+                    <select id="prof" name="prof">
+                        <option value="0">N/A</option>
+                    </select>
+                    
+                   <input type="submit" value="Add Course">
                     <input type="button" value="Exit" onclick="document.getElementById('addCourse').style.display = 'none'">
                 
                 </div>
