@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-size: 15px;
 }
 body {
 
@@ -25,6 +26,7 @@ body {
     text-align: center;
     margin: 0;
     padding: 5px;
+    font-size: 17px;
 }
 /*Navbar information*/
 #navBox {

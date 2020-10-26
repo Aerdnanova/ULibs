@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
     <head>
@@ -231,8 +230,12 @@
                         <option value="0">N/A</option>
                     </select>
                     
-                    <!--Add is optional thingy-->
-
+                    <label for="is_Required">Is Required:</label>
+                    <select id="is_Required" name="is_Required">
+                        <option value="0">Yes</option>
+                        <option value="1">No</option>
+                    </select>
+                                 
                     <input type="submit" value="Add Book">
                     <input type="button" value="Exit" onclick="document.getElementById('addBook').style.display = 'none'">
                 
