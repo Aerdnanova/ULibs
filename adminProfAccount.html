@@ -251,7 +251,7 @@
         <div id="removeAdmin" class="popUp">
             <form class="popUpContent" action="">
                 <div class="signContainer">
-                    <h1>Remove Library</h1>
+                    <h1>Remove Admin</h1>
                     <label for="rprof_id">Professor ID: </label> 
                     <input type="text" id="rprof_id" name="rprof_id" placeholder="prof id"></input>
                     
@@ -299,6 +299,30 @@
                     <label for="search">Search: </label> 
                     <input type="text" id="search" name="search" placeholder="Search"></input>
                     
+                    <h1>Results</h1>
+                    <div class="search_results">
+                        <table id="libraries">    
+                            <tr>
+                                <th>Book ID</th>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Associated Course</th>
+                                <th>Associated Professor</th>
+                                <th>Location</th>
+                                <th>Number Available</th>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+
                     <input type="button" value="Exit" onclick="document.getElementById('searchBook').style.display = 'none'">
                 
                 </div>
