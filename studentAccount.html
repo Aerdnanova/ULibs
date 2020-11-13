@@ -179,7 +179,7 @@
             var navbar = document.getElementById('navBox');
             var dropdown = document.getElementById('dropdown');
             var sticky = navbar.offsetTop;
-            window.onclick = function(event) {
+            window.onmousedown = function(event) {
                 if (event.target == popUp2) {
                     popUp2.style.display = "none";
                 }
