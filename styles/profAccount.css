@@ -104,16 +104,19 @@ body {
     border: 1px solid white;
     padding: 20px;
     color: white;
+    width: 50%
 }
 #libraries td {
     background: #E0A8A8;
     border: 1px solid white;
     padding: 20px;
     color: black;
+    text-align: center;
+    width:50%;
 }
 /*Profile modifications*/
 .popUpContent {
-    width: 60%;
+    width: 90%;
     border: 1px solid black;
     background-color: #fefefe;
     margin: 5% auto 15% auto;
@@ -161,4 +164,9 @@ body {
 .popUp .popUpContent input[type=submit]:hover {
     background-color: #eaeaea;
     color: black;
+}
+.popUp .popUpContent .signContainer .search_results #libraries {
+	width:  100%;
+    min-width: 50%;
+    table-layout: fixed;
 }
